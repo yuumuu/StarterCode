@@ -15,6 +15,32 @@ const Router = {
         
         // Find route
         let route = this.routes.find(r => r.path === path);
+        let params = {};
+
+        // Regex Match Support
+        if (!route) {
+            for (const r of this.routes) {
+                if (r.path.includes(':')) {
+                    const regexPath = '^' + r.path.replace(/:[a-zA-Z0-9_]+/g, '([^/]+)') + '$';
+                    const matcher = new RegExp(regexPath);
+                    const match = path.match(matcher);
+                    
+                    if (match) {
+                        route = r;
+                        const paramNames = (r.path.match(/:[a-zA-Z0-9_]+/g) || []).map(p => p.slice(1));
+                        match.slice(1).forEach((val, i) => {
+                            params[paramNames[i]] = val;
+                        });
+                        break;
+                    }
+                }
+            }
+        }
+
+        // Update Store Params
+        if (window.Store) {
+             window.Store.set('params', params);
+        }
         
         // 404 Fallback
         if (!route) {

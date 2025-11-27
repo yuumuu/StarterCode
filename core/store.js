@@ -5,6 +5,7 @@ const Store = {
             Alpine.store('global', {
                 user: null,
                 theme: 'light',
+                params: {},
                 
                 setUser(u) { this.user = u; },
                 setTheme(t) { this.theme = t; }
