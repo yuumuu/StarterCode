@@ -1,86 +1,86 @@
-\u003c!DOCTYPE html\u003e
-\u003chtml lang="en"\u003e
+<!DOCTYPE html>
+<html lang="en">
 
-\u003chead\u003e
-\u003cmeta charset="UTF-8"\u003e
-\u003cmeta name="viewport" content="width=device-width, initial-scale=1.0"\u003e
-\u003ctitle\u003eAdvanced Lightweight SPA\u003c/title\u003e
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Lightweight SPA</title>
 
-\u003c!-- DNS Prefetch & Preconnect untuk CDN --\u003e
-\u003clink rel="dns-prefetch" href="https://cdn.tailwindcss.com"\u003e
-\u003clink rel="dns-prefetch" href="https://cdnjs.cloudflare.com"\u003e
-\u003clink rel="preconnect" href="https://cdn.jsdelivr.net"\u003e
+    <!-- DNS Prefetch & Preconnect untuk CDN -->
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
-\u003c!-- TailwindCSS --\u003e
-\u003cscript src="https://cdn.tailwindcss.com"\u003e\u003c/script\u003e
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-\u003c!-- DOMPurify --\u003e
-\u003cscript src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"\u003e\u003c/script\u003e
+    <!-- DOMPurify -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
 
-\u003c!-- Alpine.js Plugins --\u003e
-\u003c!-- (Optional plugins can go here if needed) --\u003e
+    <!-- Alpine.js Plugins -->
+    <!-- (Optional plugins can go here if needed) -->
 
-\u003c!-- Alpine.js Core --\u003e
-\u003cscript defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"\u003e\u003c/script\u003e
+    <!-- Alpine.js Core -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"></script>
 
-\u003c!-- morphdom (for smooth DOM morph updates - enables CoreUI.morph) --\u003e
-\u003cscript src="https://unpkg.com/morphdom@2.6.1/dist/morphdom-umd.min.js"\u003e\u003c/script\u003e
+    <!-- morphdom (for smooth DOM morph updates - enables CoreUI.morph) -->
+    <script src="https://unpkg.com/morphdom@2.6.1/dist/morphdom-umd.min.js"></script>
 
-\u003c!-- App Configuration (must load before framework) --\u003e
-\u003cscript src="config.js"\u003e\u003c/script\u003e
+    <!-- App Configuration (must load before framework) -->
+    <script src="config.js"></script>
 
-\u003c!-- Error Handler (must load before framework) --\u003e
-\u003cscript src="core/error-handler.min.js"\u003e\u003c/script\u003e
+    <!-- Error Handler (must load before framework) -->
+    <script src="core/error-handler.min.js"></script>
 
-\u003c!-- Core framework styles (dot pattern, skeleton) --\u003e
-\u003clink rel="stylesheet" href="core/styles/core.css"\u003e
+    <!-- Core framework styles (dot pattern, skeleton) -->
+    <link rel="stylesheet" href="core/styles/core.css">
 
-\u003c!-- Custom Styles CSS (project overrides) --\u003e
-\u003clink rel="stylesheet" href="assets/css/style.css"\u003e
-\u003c!-- Scroll animate styles (Hybrid: CSS transitions + JS trigger) --\u003e
-\u003clink rel="stylesheet" href="assets/css/scroll-animate-css.css"\u003e
+    <!-- Custom Styles CSS (project overrides) -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Scroll animate styles (Hybrid: CSS transitions + JS trigger) -->
+    <link rel="stylesheet" href="assets/css/scroll-animate-css.css">
 
-\u003c!-- Inline Styles --\u003e
-\u003cstyle\u003e
-[x-cloak] {
-display: none !important;
-}
+    <!-- Inline Styles -->
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
 
-.fade-enter-active,
-.fade-leave-active {
-transition: opacity 0.3s ease;
-}
+        .fade-enter-active,
+        .fade-leave-active {
+            transition: opacity 0.3s ease;
+        }
 
-.fade-enter-from,
-.fade-leave-to {
-opacity: 0;
-}
-\u003c/style\u003e
-\u003c/head\u003e
+        .fade-enter-from,
+        .fade-leave-to {
+            opacity: 0;
+        }
+    </style>
+</head>
 
-\u003cbody class="text-gray-800 antialiased"\u003e
+<body class="text-gray-800 antialiased">
 
-\u003c!-- App Mount Point --\u003e
-\u003cdiv id="app" x-data="App"\u003e
-\u003c!-- Router View --\u003e
-\u003cdiv id="router-view"\u003e\u003c/div\u003e
-\u003c/div\u003e
+    <!-- App Mount Point -->
+    <div id="app" x-data="App">
+        <!-- Router View -->
+        <div id="router-view"></div>
+    </div>
 
-\u003c!-- Framework Scripts (Minified for performance) --\u003e
-\u003c!-- To debug, switch to .js versions --\u003e
-\u003cscript src="core/store.min.js"\u003e\u003c/script\u003e
-\u003cscript src="core/engine.min.js"\u003e\u003c/script\u003e
-\u003cscript src="core/router.min.js"\u003e\u003c/script\u003e
-\u003cscript src="routes.js"\u003e\u003c/script\u003e
+    <!-- Framework Scripts (Minified for performance) -->
+    <!-- To debug, switch to .js versions -->
+    <script src="core/store.min.js"></script>
+    <script src="core/engine.min.js"></script>
+    <script src="core/router.min.js"></script>
+    <script src="routes.js"></script>
 
-\u003c!-- Core UI utilities (skeleton/cache/helpers) --\u003e
-\u003cscript src="core/ui.min.js"\u003e\u003c/script\u003e
+    <!-- Core UI utilities (skeleton/cache/helpers) -->
+    <script src="core/ui.min.js"></script>
 
-\u003c!-- Project-specific assets (for dev customization) --\u003e
-\u003cscript src="assets/js/app.js"\u003e\u003c/script\u003e
-\u003c!-- Scroll animate trigger (Hybrid: CSS + lightweight JS) --\u003e
-\u003cscript src="assets/js/scroll-animate.js"\u003e\u003c/script\u003e
-\u003cscript src="main.js"\u003e\u003c/script\u003e
-\u003c/body\u003e
+    <!-- Project-specific assets (for dev customization) -->
+    <script src="assets/js/app.js"></script>
+    <!-- Scroll animate trigger (Hybrid: CSS + lightweight JS) -->
+    <script src="assets/js/scroll-animate.js"></script>
+    <script src="main.js"></script>
+</body>
 
-\u003c/html\u003e
+</html>
