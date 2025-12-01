@@ -7,17 +7,17 @@
 
     <div class="container mx-auto px-4">
         <slot name="content">
-            <div class="max-w-7xl mx-auto px-4 py-6">
+            <div class="max-w-7xl mx-auto px-4">
                 <div id="docs-root">
                     <!-- External Docs Styles (Minified) -->
                     <link rel="stylesheet" href="public/docs/docs.min.css">
 
-                    <div id="docs-loading" class="docs-loading-wrap py-12">
+                    <div id="docs-loading" class="docs-loading-wrap py-6">
                         <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto">
                         </div>
                         <p class="text-gray-600 mt-4">Loading documentation...</p>
                     </div>
-                    <div id="docs-error" class="hidden text-center py-8 text-red-600"></div>
+                    <div id="docs-error" class="hidden text-center py-6 text-red-600"></div>
                     <div id="docs-content" class="hidden"></div>
                 </div>
             </div>

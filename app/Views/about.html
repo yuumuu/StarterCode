@@ -6,19 +6,112 @@
     </slot>
 
     <slot name="content">
-        <div class="max-w-2xl mx-auto">
-            <h1 class="text-3xl font-bold mb-6">About Us</h1>
-            <p class="text-gray-600 leading-relaxed mb-4">
-                This framework was built to demonstrate how powerful modern vanilla JavaScript and Alpine.js can be
-                without the need for complex build tools or Node.js backends.
-            </p>
-            <p class="text-gray-600 leading-relaxed">
-                It features a custom engine that handles HTML includes, layouts, and a mini-template syntax, all running
-                directly in the browser.
-            </p>
+        <!-- Hero Section -->
+        <div class="bg-white pt-16 pb-12">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-5xl font-bold mb-6 text-gradient-teal-indigo aos-fade-up">
+                    About Staco
+                </h1>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto aos-fade-up aos-delay-100">
+                    Redefining how developers build Single Page Applications.
+                    Simple, lightweight, and powerful.
+                </p>
+            </div>
+        </div>
 
-            <div class="mt-8">
-                <a href="#/home" class="text-blue-600 hover:underline">&larr; Back to Home</a>
+        <!-- Mission & Story -->
+        <div class="container mx-auto px-4 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
+                <div class="aos-fade-right">
+                    <div class="bg-gradient-to-br from-teal-50 to-indigo-50 p-8 rounded-2xl border border-teal-100">
+                        <h2 class="text-3xl font-bold mb-4 text-gray-800">The Mission</h2>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            Staco was born from a simple idea: <strong>Web development shouldn't be
+                                complicated.</strong>
+                        </p>
+                        <p class="text-gray-600 leading-relaxed">
+                            In a world of complex build tools, bundlers, and heavy frameworks, Staco offers a breath of
+                            fresh air.
+                            It proves that you can build modern, reactive, and scalable applications using just the web
+                            platform's native capabilities
+                            enhanced with lightweight libraries.
+                        </p>
+                    </div>
+                </div>
+                <div class="aos-fade-left">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-xl shadow-soft border-t-4 border-teal-500 text-center">
+                            <div class="text-4xl mb-2">🚀</div>
+                            <div class="font-bold text-gray-800">Zero Build</div>
+                            <div class="text-sm text-gray-500">No webpack needed</div>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-soft border-t-4 border-indigo-500 text-center">
+                            <div class="text-4xl mb-2">⚡</div>
+                            <div class="font-bold text-gray-800">Fast</div>
+                            <div class="text-sm text-gray-500">Native performance</div>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-soft border-t-4 border-purple-500 text-center">
+                            <div class="text-4xl mb-2">🎨</div>
+                            <div class="font-bold text-gray-800">Modern</div>
+                            <div class="text-sm text-gray-500">Tailwind & Alpine</div>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-soft border-t-4 border-pink-500 text-center">
+                            <div class="text-4xl mb-2">🛠️</div>
+                            <div class="font-bold text-gray-800">Flexible</div>
+                            <div class="text-sm text-gray-500">Easy to extend</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Creator Section -->
+            <div class="max-w-3xl mx-auto text-center aos-fade-up">
+                <h2 class="text-3xl font-bold mb-8 text-gray-800">Meet the Creator</h2>
+
+                <div class="bg-white rounded-2xl shadow-indigo p-8 relative overflow-hidden group card-hover">
+                    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-teal-500 to-indigo-600"></div>
+
+                    <div class="flex flex-col md:flex-row items-center gap-8">
+                        <div
+                            class="w-32 h-32 rounded-full bg-gradient-to-br from-teal-400 to-indigo-600 p-1 flex-shrink-0">
+                            <div
+                                class="w-full h-full bg-white rounded-full flex items-center justify-center overflow-hidden">
+                                <span class="text-5xl">👨‍💻</span>
+                            </div>
+                        </div>
+
+                        <div class="text-left flex-1">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Haidaryuum (yuumuu)</h3>
+                            <p class="text-teal-600 font-medium mb-4">Lead Developer & Architect</p>
+                            <p class="text-gray-600 mb-6">
+                                Passionate about simplifying web development and creating tools that empower developers
+                                to build better software, faster.
+                            </p>
+
+                            <a href="https://github.com/yuumuu" target="_blank"
+                                class="inline-flex items-center gap-2 text-gray-700 hover:text-indigo-600 transition font-semibold group-hover:translate-x-1 duration-300">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                </svg>
+                                github.com/yuumuu
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="text-center mt-20 mb-12 aos-fade-up">
+                <h2 class="text-2xl font-bold mb-6">Ready to start building?</h2>
+                <div class="flex gap-4 justify-center">
+                    <a href="#/" class="btn-teal shadow-teal">
+                        Get Started
+                    </a>
+                    <a href="https://github.com/yuumuu/Staco" target="_blank" class="btn-indigo shadow-indigo">
+                        Star on GitHub
+                    </a>
+                </div>
             </div>
         </div>
     </slot>
