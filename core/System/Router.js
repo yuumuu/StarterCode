@@ -107,8 +107,13 @@ window.Router = {
       setTimeout(() => this.scrollToAnchor(anchor), 100);
     }
     
-    // Emit route changed event
+    // Emit route changed events
     window.dispatchEvent(new CustomEvent('route:changed', {
+      detail: { path: pathOnly, params }
+    }));
+    
+    // Also dispatch 'route-changed' for compatibility with scroll-animate.js
+    window.dispatchEvent(new CustomEvent('route-changed', {
       detail: { path: pathOnly, params }
     }));
   },

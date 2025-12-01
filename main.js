@@ -1,19 +1,27 @@
 // Routes loaded from config/routes.js
 
-// Initialize App
+// Initialize App - Use 'alpine:initialized' instead of 'alpine:init'
+// This ensures Alpine is FULLY ready before we initialize the router
+document.addEventListener('alpine:initialized', () => {
+    console.log('Alpine fully initialized, starting Router...');
+    
+    // Initialize Router after Alpine is ready
+    Router.init(routes);
+    
+    // Initialize scroll animations after a short delay to ensure DOM is ready
+    setTimeout(() => {
+        if (window.AOS) {
+            console.log('Initializing AOS from main.js');
+            window.AOS.init();
+        }
+    }, 300);
+});
+
+// Register App component for Alpine
 document.addEventListener('alpine:init', () => {
     Alpine.data('App', () => ({
         init() {
-            console.log('App Initialized');
-            Router.init(routes);
-            
-            // Initialize scroll animations after router is ready
-            setTimeout(() => {
-                if (window.AOS) {
-                    console.log('Initializing AOS from main.js');
-                    window.AOS.init();
-                }
-            }, 200);
+            console.log('App component initialized');
         }
     }));
 });

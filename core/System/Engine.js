@@ -269,26 +269,39 @@ window.Framework = {
     // 6. Execute Scripts
     this.executeScripts(target);
 
-    // 7. Re-initialize Alpine.js
+    // 7. Re-initialize Alpine.js with improved timing
     if (window.Alpine) {
-      try {
-        if (typeof Alpine.initTree === "function") {
-          if (typeof Alpine.destroyTree === "function") {
-            try {
-              Alpine.destroyTree(target);
-            } catch (e) {}
-          }
-          await Alpine.initTree(target);
-        } else if (typeof Alpine.init === "function") {
-          Alpine.init();
-        }
-      } catch (e) {
-        if (typeof Alpine.init === "function") {
-          try {
+      // Use a longer delay to ensure DOM is fully ready
+      setTimeout(async () => {
+        try {
+          if (typeof Alpine.initTree === "function") {
+            // Destroy old Alpine instances first
+            if (typeof Alpine.destroyTree === "function") {
+              try {
+                Alpine.destroyTree(target);
+              } catch (e) {
+                console.warn('Alpine destroyTree warning:', e);
+              }
+            }
+            // Initialize new Alpine instances
+            await Alpine.initTree(target);
+            console.log('Alpine re-initialized for new content');
+          } else if (typeof Alpine.init === "function") {
             Alpine.init();
-          } catch (err) {}
+            console.log('Alpine initialized (legacy method)');
+          }
+        } catch (e) {
+          console.warn('Alpine initialization warning:', e);
+          // Fallback to basic init
+          if (typeof Alpine.init === "function") {
+            try {
+              Alpine.init();
+            } catch (err) {
+              console.error('Alpine init failed:', err);
+            }
+          }
         }
-      }
+      }, 100); // Increased delay for better reliability
     }
   },
 
