@@ -1,12 +1,155 @@
-/* Project styles (assets/css/style.css)
-   This file is for project-specific customizations. System-level UI
-   styles (dot pattern, skeleton basics) are provided in `core/styles/core.css`.
+/* ============================================
+   Staco Framework - Custom Styles
+   Teal/Indigo Theme with Modern Design
+   ============================================ */
 
-   Add your CSS overrides here. Example:
+/* ===== Color Variables ===== */
+:root {
+   --color-teal-50: #f0fdfa;
+   --color-teal-100: #ccfbf1;
+   --color-teal-200: #99f6e4;
+   --color-teal-300: #5eead4;
+   --color-teal-400: #2dd4bf;
+   --color-teal-500: #14b8a6;
+   --color-teal-600: #0d9488;
+   --color-teal-700: #0f766e;
+   --color-teal-800: #115e59;
+   --color-teal-900: #134e4a;
 
-   body { font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
-   .btn-primary { background-color: var(--sc-dot-color); color: white; }
-*/
+   --color-indigo-50: #eef2ff;
+   --color-indigo-100: #e0e7ff;
+   --color-indigo-200: #c7d2fe;
+   --color-indigo-300: #a5b4fc;
+   --color-indigo-400: #818cf8;
+   --color-indigo-500: #6366f1;
+   --color-indigo-600: #4f46e5;
+   --color-indigo-700: #4338ca;
+   --color-indigo-800: #3730a3;
+   --color-indigo-900: #312e81;
+}
 
-/* Example placeholder - remove when you add real styles */
-/* body { background: #fff; } */
+.gradient-indigo {
+   background: linear-gradient(135deg, var(--color-indigo-600) 0%, var(--color-indigo-500) 100%);
+}
+
+.gradient-teal-indigo {
+   background: linear-gradient(135deg, var(--color-teal-600) 0%, var(--color-indigo-600) 100%);
+}
+
+.gradient-mesh {
+   background:
+      radial-gradient(at 0% 0%, rgba(13, 148, 136, 0.2) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(99, 102, 241, 0.2) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(13, 148, 136, 0.2) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, rgba(99, 102, 241, 0.2) 0px, transparent 50%);
+}
+
+/* ===== Button Styles ===== */
+.btn-teal {
+   background-color: var(--color-teal-600);
+   color: white;
+   padding: 0.75rem 2rem;
+   border-radius: 0.5rem;
+   font-weight: 600;
+   transition: all 0.3s ease;
+}
+
+.btn-teal:hover {
+   background-color: var(--color-teal-700);
+   transform: translateY(-2px);
+   box-shadow: 0 10px 20px rgba(13, 148, 136, 0.3);
+}
+
+.btn-indigo {
+   background-color: var(--color-indigo-600);
+   color: white;
+   padding: 0.75rem 2rem;
+   border-radius: 0.5rem;
+   font-weight: 600;
+   transition: all 0.3s ease;
+}
+
+.btn-indigo:hover {
+   background-color: var(--color-indigo-700);
+   transform: translateY(-2px);
+   box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+}
+
+/* ===== Card Styles ===== */
+.card-hover {
+   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+   transform: translateY(-4px);
+   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Text Gradients ===== */
+.text-gradient-teal {
+   background: linear-gradient(135deg, var(--color-teal-600), var(--color-teal-400));
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   background-clip: text;
+}
+
+.text-gradient-indigo {
+   background: linear-gradient(135deg, var(--color-indigo-600), var(--color-indigo-400));
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   background-clip: text;
+}
+
+.text-gradient-teal-indigo {
+   background: linear-gradient(135deg, var(--color-teal-600), var(--color-indigo-600));
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   background-clip: text;
+}
+
+/* ===== Border Styles ===== */
+.border-teal {
+   border-color: var(--color-teal-600);
+}
+
+.border-indigo {
+   border-color: var(--color-indigo-600);
+}
+
+/* ===== Smooth Transitions ===== */
+.transition-smooth {
+   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== Utility Classes ===== */
+.shadow-teal {
+   box-shadow: 0 10px 30px rgba(13, 148, 136, 0.2);
+}
+
+.shadow-indigo {
+   box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2);
+}
+
+.shadow-soft {
+   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== Navigation Active States ===== */
+.nav-link-active {
+   color: var(--color-teal-600) !important;
+   font-weight: 600;
+}
+
+.nav-anchor-active {
+   color: var(--color-indigo-500) !important;
+}
+
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 768px) {
+
+   .btn-teal,
+   .btn-indigo {
+      padding: 0.5rem 1.5rem;
+      font-size: 0.875rem;
+   }
+}
