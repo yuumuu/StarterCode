@@ -26,6 +26,46 @@ python -m http.server 3000
 ### 3. Start Building!
 Open `http://localhost:3000` and you're ready to code.
 
+## CLI Tools 🛠️
+
+Staco includes a built-in CLI tool to help you manage your project.
+
+### Usage
+Run the CLI using Node.js:
+```bash
+node staco <command>
+```
+
+### Commands
+
+#### 1. Rename Project
+Renames the project from "Staco" to your custom name (updates `index.html`, `base-path.js`, etc).
+```bash
+node staco rename MyAwesomeApp
+```
+
+#### 2. Generate Code
+Quickly scaffold new files:
+
+**Controller:**
+```bash
+node staco generate controller User
+# Creates app/Controllers/UserController.js
+```
+
+**View:**
+```bash
+node staco generate view dashboard
+# Creates app/Views/dashboard.html
+```
+
+**Component:**
+```bash
+node staco generate component card
+# Creates app/Components/card.html
+```
+
+
 ## Core Concepts
 
 ### 1. The `App` Object
